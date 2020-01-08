@@ -1,0 +1,14 @@
+{
+  "name": "root",
+  "private": true,
+  "devDependencies": {
+    "lerna": "^3.20.2"
+  },
+  "scripts": {
+    "test": "lerna run test --since",
+    "new-version": "lerna version --conventional-commits --yes",
+    "new-version-major": "lerna version major --conventional-commits --yes",
+    "new-version-minor": "lerna version minor --conventional-commits --yes",
+    "diff": "lerna diff"
+  }
+}
