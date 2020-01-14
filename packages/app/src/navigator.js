@@ -1,3 +1,5 @@
+import MainScreen from './main/mainscreen';
+
 const MainNavi = createStackNavigator({
   MainTab: {
     screen: MainTab,
@@ -8,9 +10,8 @@ const MainNavi = createStackNavigator({
 });
 
 const MainTab = createBottomTabNavigator({
-  FirstTab,
-  SecondTab,
-  ThirdTab,
+  MainScreen,
+  SecondScreen,
 });
 
 export default createAppContainer(
