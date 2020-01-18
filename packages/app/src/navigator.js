@@ -1,16 +1,19 @@
-import MainScreen from './main/mainscreen';
+import {createBottomTabNavigator} from 'react-navigation-tabs';
+import {createSwitchNavigator, createAppContainer} from 'react-navigation';
 
-const MainNavi = createStackNavigator({
-  MainTab: {
-    screen: MainTab,
-    navigationOptions: ({navigation}) => ({
-      header: null,
-    }),
-  },
-});
+import {AuthLoading} from './screen/login/authloading';
+import {LoginScreen} from './screen/login/loginscreen';
+
+import {SecondScreen} from './screen/second/secondscreen';
+import {MainScreen} from './screen/main/mainscreen';
 
 const MainTab = createBottomTabNavigator({
-  MainScreen,
+  MainScreen: {
+    screen: MainScreen,
+    navigationOptions: ({navigation}) => ({
+      title: '메인임',
+    }),
+  },
   SecondScreen,
 });
 
@@ -18,8 +21,8 @@ export default createAppContainer(
   createSwitchNavigator(
     {
       AuthLoading,
-      Auth,
-      MainNavi,
+      LoginScreen,
+      MainTab,
     },
     {
       initialRouteName: 'AuthLoading',

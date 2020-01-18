@@ -1,14 +1,8 @@
 import React from 'react';
-import {View, Text} from 'react-native';
+import Navigator from './src/navigator';
 
 const App = () => {
-  return (
-    <>
-      <View>
-        <Text>Engine: Hermes</Text>
-      </View>
-    </>
-  );
+  return <Navigator />;
 };
 
 export default App;

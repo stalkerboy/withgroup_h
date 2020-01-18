@@ -1,11 +1,11 @@
 import React, {useEffect} from 'react';
-import {Text} from 'react-native';
+import {View, Text} from 'react-native';
 import AsyncStorage from '@react-native-community/async-storage';
 
-const AuthLoading = ({navigation}) => {
+export const AuthLoading = ({navigation}) => {
   const _bootstrapAsync = async () => {
     const userToken = await AsyncStorage.getItem('userToken');
-    navigation.navigate(userToken ? 'MainTab' : 'Auth');
+    navigation.navigate(userToken ? 'MainTab' : 'LoginScreen');
   };
 
   useEffect(() => {
@@ -15,10 +15,8 @@ const AuthLoading = ({navigation}) => {
   }, []);
 
   return (
-    <Container>
+    <View>
       <Text>Loading...</Text>
-    </Container>
+    </View>
   );
 };
-
-export default AuthLoading;
